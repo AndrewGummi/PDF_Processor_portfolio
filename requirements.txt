@@ -1,0 +1,13 @@
+# Third-party dependencies, generated from actual imports.
+# External binaries are NOT pip-installable - see README:
+#   Tesseract OCR, Poppler (pdftoppm/pdfinfo), ImageMagick,
+#   llama-server + a GGUF model (optional, for the LLM stage).
+numpy
+opencv-python
+openpyxl
+psutil
+pymorphy3
+python-docx
+pywin32
+rapidfuzz
+requests

@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets — never commit
+*.key
+*.pem
+*.p12
+*.pfx
+*credentials*
+.env.*
+*.env
+secrets*
+*_api_key*
+api_key*
+*apikey*
+test_models.sh
+
+# Generated demo output (regenerate with sample_data/make_sample_data.py)
+sample_data/out/
+sample_data/reports_pdf/
+sample_data/reports_txt/
+sample_data/template_sample.xlsx
+
+# Runtime artifacts
+Logs/
+Data/
+output_txt/
+output_txt_*
+output_excel/
+# Any stage output folder, wherever it lands
+*_txt_raw
+*_txt_fixed
+output_docs/
+temp_ocr/
+temp_img_preprocess/
+training_data/
+*.log
+
+# Local caches
+price_cache.json
+corrections_cache.json
+ocr_corrections.json
+best_preset.json
+best_image_preset.json
+
+# Vendored binaries (install separately — see README)
+poppler/
+Tesseract-OCR/
+Ollama/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
