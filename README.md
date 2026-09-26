@@ -81,7 +81,7 @@ report that says just `чоботи гумові` scores:
 
 ```
 Чоботи хромові            81.5 %   ← wrong product, but shortest edit distance
-Чоботи гумові КАНАДА      78.8 %
+Чоботи гумові       78.8 %
 Чоботи гумові утеплені    74.3 %   ← correct family, penalised for being longer
 ```
 
@@ -196,43 +196,11 @@ python src/pipeline_pdf_to_excel.py ^
 ```
 
 **Input** — what OCR actually read off the degraded page (note the mangled
-site code `АОООО`, and that three different sections are present):
+site code `, and that three different sections are present):
 
 ```
-речова служба складу об'єкта АОООО:        ← the section we want
-знищено:
-казанок туристичний - 1 шт.;
-мішок спальний літній - 2 шт.;
-окуляри захисні - 4 к-т;          ← ambiguous short form
-чоботи гумові - 4 пари;           ← no exact catalogue entry exists
-матрац - 1 шт.;                   ← catalogue name carries a size suffix
-чохол інструментальний - 1 шт.;
-медична служба складу об'єкта АО0О0О:      ← different section - must be excluded
-знищено:
-аптечка - 2 шт.;
-служба зв'язку складу об'єкта АОООО:       ← different section - must be excluded
-знищено:
-антена виносна - 1 шт.;
-```
 
-**Output** — sheet `sample_report_1`:
 
-| № | Item | Unit | Qty | Price | |
-|---|------|------|-----|-------|--|
-| 1 | Казанок туристичний | шт. | 1 | 487.80 | |
-| 2 | Мішок спальний літній | шт. | 2 | 910.92 | |
-| 3 | **Окуляри захисні прозорі** | к-т | 4 | 1566.65 | resolved via synonym sheet — *not* `Окуляри світлозахисні` (640.00) |
-| 4 | чоботи гумові | пари | 4 | 980.00 | 🟡 `81% — Взято: Чоботи хромові` — flagged, wrong product |
-| 5 | **Матрац, розмір 1850\*650\*60** | шт | 1 | 924.78 | short form expanded to the priced catalogue entry |
-| 6 | **Чохол інструментальний універсальний** | шт | 1 | 621.30 | idem |
-
-Items from the other two sections were correctly excluded by the
-content-based section boundary.
-
-Run: **2 PDFs → 63 s** total (58 s OCR, 2 s correction, 3 s statement),
-13 items, 13 prices matched, 1 flagged for review.
-
----
 
 ## Architecture
 
