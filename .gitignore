@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets — never commit
+*.key
+*.pem
+*.p12
+*.pfx
+*credentials*
+.env.*
+*.env
+secrets*
+*_api_key*
+api_key*
+*apikey*
+test_models.sh
+
+# Sample PDFs (sample_data/pdf, sample_data/truth) ARE committed: they are
+# synthetic and small; regenerate with sample_data/make_sample_data.py.
+
+# Runtime artifacts
+Logs/
+Data/
+output_txt/
+output_txt_*
+temp_ocr/
+training_data/
+*.log
+
+# Local caches
+best_preset.json
+
+# Vendored binaries (install separately — see README)
+poppler/
+Tesseract-OCR/
+Ollama/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

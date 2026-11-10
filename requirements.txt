@@ -1,0 +1,21 @@
+# Third-party dependencies, generated from actual imports.
+# External binaries are NOT pip-installable - see README:
+#   Tesseract OCR, Poppler (pdftoppm/pdfinfo), ImageMagick,
+#   llama-server + a GGUF model (optional, for the LLM stage).
+#   Google Chrome >= 153 (optional, for --chrome; tested on 153.0.8010.12).
+#     Not headless: the built-in PDF viewer is needed.
+#   Ollama with a qwen2.5 instruct model (optional, for --quorum LLM step).
+#   Windows Photos app (optional, third --quorum witness).
+numpy
+opencv-python
+openpyxl
+psutil
+pymorphy3
+pymorphy3-dicts-uk
+pymupdf
+python-docx
+pywin32
+pywinauto
+rapidfuzz
+requests
+websockets
